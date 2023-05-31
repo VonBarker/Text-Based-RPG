@@ -4,18 +4,11 @@ import java.util.Scanner;
 
 import javax.lang.model.util.ElementScanner14;
 
-/**
- * Hello world!
- */
 public final class App {
 
     private App() {
     }
 
-    /**
-     * Says hello to the world.
-     * @param args The arguments of the program.
-     */
     public static void main(String[] args) {
         System.out.println("New Ship!");
         Character playerShip = new Character("PlayerShip");
