@@ -1,8 +1,7 @@
 package com.rpg_example;
 
+import java.util.Random;
 import java.util.Scanner;
-
-import javax.lang.model.util.ElementScanner14;
 
 public final class App {
 
@@ -10,6 +9,10 @@ public final class App {
     }
 
     public static void main(String[] args) {
+        Island sailersBounty = new Island("Sailer's Bounty");
+        Random rand = new Random();
+        sailersBounty.setTreasure(rand.nextInt(5));
+
         System.out.println("New Ship!");
         Character playerShip = new Character("PlayerShip");
 
@@ -20,7 +23,7 @@ public final class App {
         String shipName = userInput.nextLine();
         playerShip.setName(shipName);
         
-        System.out.println("What ship type do you want? The sloop is the smallest which makes it the fastest, but also the easiest to sink if hit. The brigantine is the medium size ship which makes it the middle ground in speed and how easly it can be sunk. The galleon is the largest ship which makes it the slowest, but it sinks the slowest. \n\nType 1 for Sloop, 2 for Brigantine, or 3 for Galleon");
+        System.out.println("What ship type do you  want? The sloop is the smallest which makes it the fastest, but also the easiest to sink if hit. The brigantine is the medium size ship which makes it the middle ground in speed and how easly it can be sunk. The galleon is the largest ship which makes it the slowest, but it sinks the slowest. \n\nType 1 for Sloop, 2 for Brigantine, or 3 for Galleon");
         String shipType = userInput.nextLine();
         if(shipType.equals("1"))
         {
@@ -44,5 +47,7 @@ public final class App {
 
         playerShip.getType();
         System.out.println(playerShip);
+
+        System.out.println(sailersBounty);
     }
 }
