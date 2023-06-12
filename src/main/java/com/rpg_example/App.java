@@ -9,10 +9,19 @@ public final class App {
     }
 
     public static void main(String[] args) {
-        Island sailersBounty = new Island("Sailer's Bounty");
+        // Create Islands
         Random rand = new Random();
-        sailersBounty.setTreasure(rand.nextInt(5));
 
+        Island sailersBounty = new Island("Sailer's Bounty");
+        sailersBounty.setTreasure(rand.nextInt(5));
+        
+        Island smugglersBay = new Island("Smuggler's Bay");
+        smugglersBay.setTreasure(rand.nextInt(12));
+
+        Island sandyShallows = new Island("Sandy Shallows");
+        sandyShallows.setTreasure(rand.nextInt(2));
+
+        // Create Player Ship
         System.out.println("New Ship!");
         Character playerShip = new Character("PlayerShip");
 
@@ -53,9 +62,12 @@ public final class App {
         }
         validInput = false;
 
+        // Output
         playerShip.getType();
         System.out.println(playerShip);
 
         System.out.println(sailersBounty);
+        System.out.println(smugglersBay);
+        System.out.println(sandyShallows);
     }
 }
