@@ -21,6 +21,8 @@ public final class App {
         Island sandyShallows = new Island("Sandy Shallows");
         sandyShallows.setTreasure(rand.nextInt(2));
 
+        Island[] islands = {sailersBounty, smugglersBay, sandyShallows};
+
         // Create Player Ship
         System.out.println("New Ship!");
         Character playerShip = new Character("PlayerShip");
@@ -66,8 +68,17 @@ public final class App {
         playerShip.getType();
         System.out.println(playerShip);
 
-        System.out.println(sailersBounty);
-        System.out.println(smugglersBay);
-        System.out.println(sandyShallows);
+        System.out.println("Hit Enter to See the Islands");
+        int islandsPrinted = 0;
+        while(islandsPrinted < islands.length)
+        {
+            String input = userInput.nextLine();
+            if(input.equals(""))
+            {
+                System.out.println(islands[islandsPrinted]);
+                System.out.println("Hit Enter for the Next Island");
+                islandsPrinted = islandsPrinted + 1;
+            }
+        }
     }
 }
